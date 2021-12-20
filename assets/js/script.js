@@ -18,6 +18,7 @@ $(document).ready(() => {
   $("#clearAll, #clearAllMobile").on("click", clearAllHandler);
   $("#confirmClearAll").on("click", clearAll);
   $("#confirmClearAllModal").modal();
+  $(".sidenav").sidenav();
 });
 
 $("main").append(generateTable());
@@ -76,4 +77,5 @@ const clearAll = (evt) => {
   });
   taskData = [];
   saveTasks();
+  $(".sidenav").sidenav("close");
 };
