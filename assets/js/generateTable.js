@@ -1,3 +1,5 @@
+const DateTime = luxon.DateTime;
+
 const tableHeaders = {
   yAxis: [
     "Feed Baby",
@@ -39,6 +41,7 @@ const tableHeaders = {
 
 const generateTable = () => {
   let html = [`<table class="responsive-table">`];
+  const now = DateTime.now();
 
   // Generate Y-Axis
   html.push(`<thead class="hide-on-med-and-down"><tr><th></th>`);
@@ -58,10 +61,15 @@ const generateTable = () => {
                 <th>${y}</th>
         `);
     for (const x of tableHeaders.xAxis) {
+      const xTime = DateTime.fromString(x, "h a");
+      let disabled = "";
+      if (now.hour > xTime.hour) {
+        disabled = "disabled";
+      }
       html.push(`
                     <td>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" ${disabled}/>
                             <span><span class="hide-on-large-only">${x}</span></span>
                         </label>
                     </td>
