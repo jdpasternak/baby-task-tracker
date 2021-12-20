@@ -41,7 +41,7 @@ const generateTable = () => {
   let html = [`<table class="responsive-table">`];
 
   // Generate Y-Axis
-  html.push(`<thead class="hide-on-small-only"><tr><th></th>`);
+  html.push(`<thead class="hide-on-med-and-down"><tr><th></th>`);
 
   for (const x of tableHeaders.xAxis) {
     html.push(`<th>${x}</th>`);
@@ -62,7 +62,7 @@ const generateTable = () => {
                     <td>
                         <label>
                             <input type="checkbox" />
-                            <span><span class="hide-on-med-and-up">${x}</span></span>
+                            <span><span class="hide-on-large-only">${x}</span></span>
                         </label>
                     </td>
             `);
