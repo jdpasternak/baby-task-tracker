@@ -21,11 +21,32 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
       defer
     ></script>
-    <script src="assets/js/script.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"
+      defer
+    ></script>
+    <script src="assets/js/script.js" type="module" defer></script>
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Baby Task Tracker</a>
+          <a href="#" data-target="mobile-menu" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">TBD</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-menu">
+        <li><a href="#">TBD</a></li>
+      </ul>
+    </header>
+
     <main></main>
+
     <footer></footer>
   </body>
 </html>
