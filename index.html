@@ -36,17 +36,36 @@
             ><i class="material-icons">menu</i></a
           >
           <ul class="right hide-on-med-and-down">
-            <li><a href="#">TBD</a></li>
+            <li><a id="clearAll" href="#">Clear All</a></li>
           </ul>
         </div>
       </nav>
       <ul class="sidenav" id="mobile-menu">
-        <li><a href="#">TBD</a></li>
+        <li><a id="clearAllMobile" href="#">Clear All</a></li>
       </ul>
     </header>
 
     <main></main>
 
     <footer></footer>
+
+    <!-- Clear All Confirm Modal -->
+    <div id="confirmClearAllModal" class="modal">
+      <div class="modal-content">
+        <h4>Clear All Tasks?</h4>
+        Are you sure you want to clear all tasks?
+      </div>
+      <div class="modal-footer">
+        <a
+          id="confirmClearAll"
+          href="#!"
+          class="modal-close waves-effect waves-green btn-flat"
+          >YES</a
+        >
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >NO</a
+        >
+      </div>
+    </div>
   </body>
 </html>

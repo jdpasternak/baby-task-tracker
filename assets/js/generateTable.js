@@ -76,6 +76,4 @@ const generateTable = () => {
   return html.join("");
 };
 
-// console.log(generateTable());
-
 export { generateTable };

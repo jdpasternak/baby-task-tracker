@@ -15,6 +15,9 @@ let taskData = [];
 $(document).ready(() => {
   $(`input[type="checkbox"]`).on("change", taskCheckHandler);
   loadTasks();
+  $("#clearAll, #clearAllMobile").on("click", clearAllHandler);
+  $("#confirmClearAll").on("click", clearAll);
+  $("#confirmClearAllModal").modal();
 });
 
 $("main").append(generateTable());
@@ -61,4 +64,16 @@ const loadTasks = () => {
       .children("input");
     el[0].checked = true;
   }
+};
+
+const clearAllHandler = (evt) => {
+  $("#confirmClearAllModal").modal("open");
+};
+
+const clearAll = (evt) => {
+  $(":checkbox").each((_, e) => {
+    e.checked = false;
+  });
+  taskData = [];
+  saveTasks();
 };
