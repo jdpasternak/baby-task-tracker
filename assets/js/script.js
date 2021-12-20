@@ -1,6 +1,6 @@
 import { generateTable } from "./generateTable.js";
 
-const DateTime = luxon.DateTime;
+
 
 /* taskData model
 
