@@ -19,7 +19,7 @@ $(document).ready(() => {
   $(".sidenav").sidenav();
 });
 
-$("main").append(generateTable());
+// $("main").append(generateTable());
 
 const taskCheckHandler = (evt) => {
   let name = $(evt.target).closest(`tr`).children("th").text();
