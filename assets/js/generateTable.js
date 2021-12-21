@@ -63,9 +63,9 @@ const generateTable = () => {
     for (const x of tableHeaders.xAxis) {
       const xTime = DateTime.fromString(x, "h a");
       let disabled = "";
-      if (now.hour > xTime.hour) {
-        disabled = "disabled";
-      }
+      // if (now.hour > xTime.hour) {
+      //   disabled = "disabled";
+      // }
       html.push(`
                     <td>
                         <label>
