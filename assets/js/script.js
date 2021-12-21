@@ -1,7 +1,5 @@
 import { generateTable } from "./generateTable.js";
 
-const DateTime = luxon.DateTime;
-
 /* taskData model
 
     {
@@ -15,6 +13,10 @@ let taskData = [];
 $(document).ready(() => {
   $(`input[type="checkbox"]`).on("change", taskCheckHandler);
   loadTasks();
+  $("#clearAll, #clearAllMobile").on("click", clearAllHandler);
+  $("#confirmClearAll").on("click", clearAll);
+  $("#confirmClearAllModal").modal();
+  $(".sidenav").sidenav();
 });
 
 $("main").append(generateTable());
@@ -54,11 +56,21 @@ const loadTasks = () => {
 
   for (const e of taskData) {
     console.log(`Name: ${e.name}\nTime: ${e.time}`);
-    let el = $(`th:contains("${e.name}")`)
-      .closest("tr")
-      .children(`td:contains("${e.time}")`)
-      .children("label")
-      .children("input");
-    el[0].checked = true;
+    $(`input[data-task="${e.name}"][data-time="${e.time}"]`).each(
+      (_, e) => (e.checked = true)
+    );
   }
+};
+
+const clearAllHandler = (evt) => {
+  $("#confirmClearAllModal").modal("open");
+};
+
+const clearAll = (evt) => {
+  $(":checkbox").each((_, e) => {
+    e.checked = false;
+  });
+  taskData = [];
+  saveTasks();
+  $(".sidenav").sidenav("close");
 };
