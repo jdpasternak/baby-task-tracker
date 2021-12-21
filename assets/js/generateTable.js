@@ -69,7 +69,7 @@ const generateTable = () => {
       html.push(`
                     <td>
                         <label>
-                            <input type="checkbox" ${disabled}/>
+                            <input type="checkbox" ${disabled} data-task="${y}" data-time="${x}" />
                             <span><span class="hide-on-large-only">${x}</span></span>
                         </label>
                     </td>
