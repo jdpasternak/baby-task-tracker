@@ -16,6 +16,14 @@ $(document).ready(() => {
   $("#clearAll, #clearAllMobile").on("click", clearAllHandler);
   $("#confirmClearAll").on("click", clearAll);
   $("#confirmClearAllModal").modal();
+  $("#preferencesModal").modal();
+
+  $(".datepicker").datepicker({
+    autoClose: true,
+    onOpen: () => $(".datepicker-modal").attr("style", "width:100%;"),
+  });
+
+  $("#preferences, #preferencesMobile").on("click", openPreferencesModal);
   $(".sidenav").sidenav();
 });
 
@@ -73,4 +81,8 @@ const clearAll = (evt) => {
   taskData = [];
   saveTasks();
   $(".sidenav").sidenav("close");
+};
+
+const openPreferencesModal = () => {
+  $("#preferencesModal").modal("open");
 };

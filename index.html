@@ -37,11 +37,21 @@
           >
           <ul class="right hide-on-med-and-down">
             <!-- <li><a id="clearAll" href="#">Clear All</a></li> -->
+            <li>
+              <a id="preferences" href="#"
+                ><i class="material-icons">settings</i></a
+              >
+            </li>
           </ul>
         </div>
       </nav>
       <ul class="sidenav" id="mobile-menu">
         <!-- <li><a id="clearAllMobile" href="#">Clear All</a></li> -->
+        <li>
+          <a id="preferencesMobile" href="#"
+            ><i class="material-icons">settings</i>Preferences</a
+          >
+        </li>
       </ul>
     </header>
 
@@ -88,5 +98,36 @@
         >
       </div>
     </div> -->
+
+    <!-- Preferences Modal -->
+    <div id="preferencesModal" class="modal">
+      <div class="modal-content" style="height: 50vh">
+        <h4>Preferences</h4>
+        <!-- Baby Info -->
+        <h5>Your Baby</h5>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" />
+            <label>Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="birthdate" type="text" class="datepicker" />
+            <label for="birthdate">Birthdate</label>
+          </div>
+        </div>
+
+        <!-- Medications -->
+        <h5>Your Medications</h5>
+        <div class="row">
+          <div class="input-field"></div>
+        </div>
+        <!-- Vitamins -->
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Save</a
+        >
+      </div>
+    </div>
   </body>
 </html>
