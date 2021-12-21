@@ -1,7 +1,5 @@
 import { generateTable } from "./generateTable.js";
 
-
-
 /* taskData model
 
     {
@@ -58,12 +56,9 @@ const loadTasks = () => {
 
   for (const e of taskData) {
     console.log(`Name: ${e.name}\nTime: ${e.time}`);
-    let el = $(`th:contains("${e.name}")`)
-      .closest("tr")
-      .children(`td:contains("${e.time}")`)
-      .children("label")
-      .children("input");
-    el[0].checked = true;
+    $(`input[data-task="${e.name}"][data-time="${e.time}"]`).each(
+      (_, e) => (e.checked = true)
+    );
   }
 };
 
